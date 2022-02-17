@@ -8,26 +8,28 @@ pose estimation for tensorrt.
 
 
 ## Feature
-1. Use classic tensorrt python api, not torch2trt.
-    * Compare the cost time of inference ( the lower the better ):
-        1. torch2trt ( original ) - <a style="color:Red"> 2.683s </a>
-        2. tensorrt python api - <a style="color:Red"> 0.002s </a>
+1. Use the classical tensorrt python api, not torch2trt.
+    * TensorRT API is faster than torch2trt ( original )
+        1. torch2trt: <a style="color:Red"> 2.683s </a>
+        2. tensorrt python api: <a style="color:Green"> 0.002s (better) </a> 
+2. Integrate with Docker and provide a cleaner environment.
+3. Simplify architecture.
+4. More automatical
 
-2. Build the docker image
+## Workflow
+1. Build the docker image `./docker/build.sh`
     ```shell
     ./docker/build.sh
     ```
-3. Run the docker container
+2. Run the docker container `./docker/run.sh`
     ```shell    
     ./docker/run.sh /dev/video      # run with camera
     ./docker/run.sh                 # run without camera
     ```
-4. Download and convert models
+3. Download and convert models - `download_model.sh`
     * Run
         ```shell
-        # `pwd` is /trt-pose-cam/demo
-        cd ./demo
-        ./download_model.sh
+        cd ./demo && ./download_model.sh
         ```
     * Select 
         ```
@@ -51,8 +53,7 @@ pose estimation for tensorrt.
         /*******************************************************************/
         Please enter the index you want to convert [<idx>/all] : 1
         ```
-    
-5. Run inference
+4. Run inference
     * testing - `test_infer.py`
         * run
             ```shell
