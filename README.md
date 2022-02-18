@@ -1,4 +1,4 @@
-# tensorrt_pose_esimation
+# tensorrt_pose_estimation
 pose estimation for tensorrt. 
 
 ![cover](./figures/cover.gif)
