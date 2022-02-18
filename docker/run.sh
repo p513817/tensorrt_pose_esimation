@@ -34,7 +34,7 @@ else
 		-v `pwd`/:/$NAME \
 		-v /tmp/.x11-unix:/tmp/.x11-unix:rw \
 		-e DISPLAY=unix$DISPLAY \
-		$IMG bash
+		$IMG ./docker/install_trt_pose.sh
 	else
 		
 		echo "Mount camera "
@@ -46,6 +46,6 @@ else
 		-v `pwd`/:/$NAME \
 		-v /tmp/.x11-unix:/tmp/.x11-unix:rw \
 		-e DISPLAY=unix$DISPLAY \
-		$IMG bash
+		$IMG ./docker/install_trt_pose.sh
 	fi
 fi

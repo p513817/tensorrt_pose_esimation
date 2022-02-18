@@ -8,8 +8,8 @@ COPY ["./format_print.sh", "./requirements.sh", "/workspace/" ]
 ENV DEBIAN_FRONTEND noninteractive  
 RUN chmod +x ./requirements.sh \
 && ./requirements.sh \
-&& rm ./requirements.sh \
-&& rm ./format_print.sh
+&& rm ./*.sh
+
 # ------------------------------------------------------------------
 # 寫入進入W
 ENTRYPOINT [ "/bin/bash", "-c" ]
